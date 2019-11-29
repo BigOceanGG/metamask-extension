@@ -436,6 +436,8 @@ class TransactionController extends EventEmitter {
 
     // set state to signed
     this.txStateManager.setTxStatusSigned(txMeta.id)
+    ethTx.raw.push(ethUtil.bufferToHex([]))
+    ethTx.raw.push(ethUtil.bufferToHex([]))
     const rawTx = ethUtil.bufferToHex(ethTx.serialize())
     return rawTx
   }
